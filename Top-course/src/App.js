@@ -8,23 +8,26 @@ import { toast } from 'react-toastify';
 const App = () => {
 
   const [courses, setCourses] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [category, setCategory] = useState(filterData[0].title);
 
   async function fetchData() {
+    setLoading(true);
     try {
       let response = await fetch(apiUrl);
       let output = await response.json();
-
-      setCourses(output);
+      ///output -> 
+      setCourses(output.data);
     }
     catch (error) {
-      console.error(error);
       toast.error("Network me koi dikkat hai");
     }
+    setLoading(false);
   }
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [])
 
   return (
     <div>
