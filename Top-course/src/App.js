@@ -4,6 +4,7 @@ import Filter from "./components/Filter";
 import Cards from "./components/Cards";
 import { apiUrl, filterData } from './data';
 import { toast } from 'react-toastify';
+import { useState, useEffect } from 'react';
 
 const App = () => {
 
@@ -40,7 +41,7 @@ const App = () => {
       </div>
 
       <div>
-        <Cards />
+        loading ? (<spinner />) : (<Cards />);
       </div>
     </div>
   )
