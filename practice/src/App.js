@@ -512,28 +512,55 @@
 
 // Token Save in LocalStorage 
 
-import { useState } from "react";
+// import { useState } from "react";
 
-function App() {
-    const [formData, setFormData] = useState({
-        email: "",
-        password: ""
-    });
+// function App() {
+//     const [formData, setFormData] = useState({
+//         email: "",
+//         password: ""
+//     });
 
-    async function handleSubmit(e) {
-        e.preventDefault();
+//     async function handleSubmit(e) {
+//         e.preventDefault();
 
-        const response = await fetch("url", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formData)
-        });
-    }
+//         const response = await fetch("url", {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify(formData)
+//         });
+//     }
 
-    return <div>Hello</div>;
-}
+//     return <div>Hello</div>;
+// }
 
-export default App;
 
+//STEP 6: POST request (Login/Register)
+// function submitHandler(e) {
+//   e.preventDefault();
+
+//   fetch("/login", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(formData),
+//   })
+//     .then(res => res.json())
+//     .then(data => console.log(data));
+// }
+
+
+
+///Error handling (IMPORTANT)
+
+// fetch("/api")
+//   .then(res => res.json())
+//   .then(data => setData(data))
+//   .catch(err => console.log("Error:", err));
+// export default App;
+
+
+// LocalStorage use
+// localStorage.setItem("token", data.token);
